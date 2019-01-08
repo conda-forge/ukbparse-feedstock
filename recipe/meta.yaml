@@ -1,6 +1,6 @@
 {% set name = "ukbparse" %}
-{% set version = "0.14.1" %}
-{% set sha256 = "950f4f81a2f7aff44289337a3e8b4c3dcbdba15507e8b00ba0816bc2b745f238" %}
+{% set version = "0.14.3" %}
+{% set sha256 = "b8bb5fb809fd43319f3a399b2de3e7bd9357c064cbcda6dd7454b0c55021e9b8" %}
 
 package:
   name: {{ name|lower }}
