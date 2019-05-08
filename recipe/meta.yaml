@@ -1,6 +1,6 @@
 {% set name = "ukbparse" %}
-{% set version = "0.19.2" %}
-{% set sha256 = "d38487ef7d8484fce3134b53a9fceb80da0b03be3745753928c2c16b9a553675" %}
+{% set version = "0.20.0" %}
+{% set sha256 = "8479e26a6c6d6ad1aabcb7bf0772f213d9257045368852bc1a100e893d62b8dd" %}
 
 package:
   name: {{ name|lower }}
@@ -37,6 +37,10 @@ requirements:
     - beautifulsoup4
     - lxml
     - libxml2
+    - jupyter
+    - notebook
+    - pygments
+
 
 test:
   source_files:
@@ -68,7 +72,7 @@ about:
   license: Apache-2.0
   license_family: Apache
   license_file: LICENSE
-  summary: 'The FSL Python library'
+  summary: 'The FMRIB UK Biobank data processing library'
   dev_url: https://git.fmrib.ox.ac.uk/fsl/ukbparse/
 
 extra:
