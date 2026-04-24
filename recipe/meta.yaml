@@ -8,12 +8,12 @@ package:
 
 source:
   fn: {{ name }}-{{ version }}.tar.gz
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: {{ sha256 }}
 
 build:
   noarch: python
-  number: 0
+  number: 1
   script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
   entry_points:
     - ukbparse                = ukbparse.main:main
@@ -23,11 +23,11 @@ build:
     - ukbparse_demo           = ukbparse.scripts.demo:main
 
 requirements:
-  build:
-    - python
+  host:
+    - python {{ python_min }}
     - pip
   run:
-    - python >=3.5
+    - python >={{ python_min }}
     - h5py
     - numpy
     - pandas
@@ -54,6 +54,7 @@ test:
     - notebook
     - jupyter
     - pygments
+    - python {{ python_min }}
 
   commands:
     # bash_kernel is not available on
